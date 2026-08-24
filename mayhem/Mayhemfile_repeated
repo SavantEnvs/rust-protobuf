@@ -1,0 +1,11 @@
+# Mayhem target: repeated — upstream's own test-crates/protobuf-fuzz/fuzz/fuzz_targets/repeated.rs, built by
+# mayhem/build.sh via cargo-fuzz at /mayhem/repeated. Fuzzes: parse_from_bytes on TestTypesRepeated (repeated fields of every scalar/enum/nested-message kind).
+# No local seed corpus is shipped (upstream's fuzz/ ships none, gitignored corpus/artifacts dirs
+# only) — the server-accumulated testsuite.tar is the sole seed source.
+project: savantenvs/rust-protobuf
+target: repeated
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+cmds:
+  - cmd: /mayhem/repeated
+    libfuzzer: true
