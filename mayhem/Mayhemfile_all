@@ -1,0 +1,12 @@
+# Mayhem target: all — upstream's own test-crates/protobuf-fuzz/fuzz/fuzz_targets/all.rs, built by
+# mayhem/build.sh via cargo-fuzz at /mayhem/all. Fuzzes: the combinator target: byte[0] selects TestTypesSingular/Repeated/Map, byte[1] selects bytes/reader/json/text-format/write_to_bytes over the remaining payload.
+# No local seed corpus is shipped (upstream's fuzz/ ships none, gitignored corpus/artifacts dirs
+# only) — the server-accumulated testsuite.tar is the sole seed source.
+# origin: https://app.mayhem.security/mayhemheroes/rust-protobuf/all/10
+project: savantenvs/rust-protobuf
+target: all-buggy-mhh-run-10
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+cmds:
+  - cmd: /mayhem/all
+    libfuzzer: true
